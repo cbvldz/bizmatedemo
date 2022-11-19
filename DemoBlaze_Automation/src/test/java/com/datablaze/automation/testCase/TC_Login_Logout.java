@@ -3,7 +3,6 @@ import com.datablaze.automation.pageObject.po_Homepage;
 import com.datablaze.automation.pageObject.po_Login;
 import com.datablaze.automation.pageObject.po_Logout;
 import com.datablaze.automation.utils.BrowserManager;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -11,7 +10,7 @@ import org.testng.annotations.Test;
 public class TC_Login_Logout {
 
     @Test
-    public void TC1_validateLogin() throws InterruptedException {
+    public void TC1_validateLogin() {
         WebDriver driver = BrowserManager.getChromeDriver();
         po_Homepage home = PageFactory.initElements(driver, po_Homepage.class);
         po_Login obj = PageFactory.initElements(driver, po_Login.class);
@@ -32,8 +31,7 @@ public class TC_Login_Logout {
         home.navTo_login();
         obj.invalidUsername();
         obj.validPw();
-        obj.clickLogin_btn();
-
+        obj.negativeClickLogin_btn();
 
     }
 }

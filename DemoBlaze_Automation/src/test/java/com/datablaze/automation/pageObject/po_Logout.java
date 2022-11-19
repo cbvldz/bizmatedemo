@@ -23,7 +23,6 @@ public class po_Logout {
     public void clickLogout() {
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"logout2\"]"))).click();
-        driver.quit();
 
     }
 }

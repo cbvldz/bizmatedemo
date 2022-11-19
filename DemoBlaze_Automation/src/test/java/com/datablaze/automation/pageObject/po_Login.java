@@ -44,21 +44,20 @@ public class po_Login {
         pw_fld.sendKeys("asd0asd0");
     }
 
-    public void clickLogin_btn() throws InterruptedException {
-        String validUn = "cherryvtest";
-        if (username_fld.equals("cherryvtest")) {
-            login_btn.click();
-        }
-        else  {
-            login_btn.click();
-            Thread.sleep(3000);
-            Alert alert = driver.switchTo().alert();
-            Thread.sleep(3000);
-            String alertMessage = driver.switchTo().alert().getText();
-            System.out.print(alertMessage);
-            Thread.sleep(3000);
-            alert.accept();
-        }
+    public void clickLogin_btn() {
+        login_btn.click();
+    }
+
+    public void negativeClickLogin_btn() throws InterruptedException {
+
+        login_btn.click();
+        Thread.sleep(3000);
+        Alert alert = driver.switchTo().alert();
+        Thread.sleep(3000);
+        String alertMessage = driver.switchTo().alert().getText();
+        System.out.print(alertMessage);
+        Thread.sleep(3000);
+        alert.accept();
     }
 }
 
